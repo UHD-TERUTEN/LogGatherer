@@ -1,5 +1,5 @@
 # LogGatherer
-학습용 로그 수집 서브시스템
+학습용 로그 수집 서브시스템 
 
 1. Windows 계정에 로그온하면 FileAccessMonitor 실행됩니다.
 2. 이 상태로 프로그램을 켜면 프로세스에 dll injection을 실행하고,   
