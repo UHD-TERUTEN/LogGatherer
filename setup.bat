@@ -1,7 +1,8 @@
 @echo off
 echo 1. Copy DetoursLog.dll to %WINDIR%\System32...
-set SYSTEM32_PATH=%WINDIR%\System32
-copy DetoursLog.dll "%SYSTEM32_PATH%\DetoursLog.dll"
+set SOURCE_PATH=%~dp0%DetoursLog.dll
+set TARGET_PATH=%WINDIR%\System32\DetoursLog.dll
+copy "%SOURCE_PATH%" "%TARGET_PATH%"
 echo 2. Register FileAccessMonitor to taskschd...
 schtasks /create /tn "File Access Monitor" /sc "ONLOGON" /rl HIGHEST /tr "%~dp0%\FileAccessMonitor.exe"
 echo 3. Register send.bat to taskschd...
