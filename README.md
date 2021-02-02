@@ -15,3 +15,6 @@
 
 ### 로그 전송 시각
 - 매일 오전 0시 정각 (setup.bat 파일이나 taskschd에서 직접 수정)
+
+### 프로모션 영상
+[![학습용 로그 수집 서브시스템 설치 영상](https://i9.ytimg.com/vi/3Tyo85Gf3Yo/mq2.jpg?sqp=CLj69P8F&rs=AOn4CLAVodshwRBxfe_nMEQPpb7FkAHKHg)](https://www.youtube.com/watch?v=3Tyo85Gf3Yo)
