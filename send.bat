@@ -4,13 +4,13 @@ set ssh_account=%%F
 )
 set id_rsa_location=%HOMEDRIVE%%HOMEPATH%\.ssh\id_rsa
 echo start update
-echo upload log file
+echo zipping log files
+tar -cf "%DATE%.zip" -C %LogGathererRoot%\Logs\ .
 echo.
-echo ssh connects to %ssh_account%...
+echo uploading zip
+echo ssh connecting to %ssh_account%...
 ssh -i %id_rsa_location% %ssh_account% "mkdir logs"
+scp -i %id_rsa_location% "%DATE%.zip" "%ssh_account%:logs"
 echo.
-echo sftp connects to %ssh_account%...
-sftp -b upload.txt -i %id_rsa_location% %ssh_account%
-echo.
-echo upload log file done!
+echo log files have been uploaded!
 echo finish
