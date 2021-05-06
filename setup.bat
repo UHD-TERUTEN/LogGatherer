@@ -3,7 +3,7 @@ echo 1. Copy DetoursLog.dll to %WINDIR%\System32...
 set SOURCE_PATH=%~dp0%DetoursLog.dll
 set TARGET_PATH=%WINDIR%\System32\DetoursLog.dll
 copy "%SOURCE_PATH%" "%TARGET_PATH%"
-setx LogGathererRoot "%LOCALAPPDATA%\LogGatherer"
+setx /M LogGathererRoot "%LOCALAPPDATA%\LogGatherer"
 echo 2. Copy Files to %LogGathererRoot%...
 mkdir "%LogGathererRoot%\Logs"
 set SOURCE=%~dp0%*
