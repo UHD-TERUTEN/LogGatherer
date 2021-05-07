@@ -11,7 +11,7 @@ copy "%SOURCE%" "%LogGathererRoot%"
 echo 3. Register FileAccessMonitor to taskschd...
 schtasks /create /tn "File Access Monitor" /sc "ONLOGON" /rl HIGHEST /tr "%LogGathererRoot%\FileAccessMonitor.exe"
 echo 4. Register send.bat to taskschd...
-schtasks /create /tn "File Access Log Sender" /sc "DAILY" /st 00:00 /ru system /tr "%LogGathererRoot%\send.bat"
+schtasks /create /tn "File Access Log Sender" /sc "DAILY" /rl HIGHEST /st 12:00 /tr "%LogGathererRoot%\send.bat"
 echo Install Succeeded. OS will automatically restarts after 10 seconds..."
 shutdown -r -t 10
 timeout 10 > NUL
