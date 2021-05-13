@@ -3,12 +3,12 @@ echo 1. Copy DetoursLog.dll to %WINDIR%\System32...
 set SOURCE_PATH=%~dp0%DetoursLog*.dll
 set TARGET_PATH=%WINDIR%\System32\
 copy "%SOURCE_PATH%" "%TARGET_PATH%"
-set SOURCE_PATH=%~dp0%DetoursLog64.dll
+set SOURCE_PATH=%~dp0%DetoursLog32.dll
 set TARGET_PATH=%WINDIR%\SysWOW64\
 copy "%SOURCE_PATH%" "%TARGET_PATH%"
-setx /M LogGathererRoot "%LOCALAPPDATA%\LogGatherer"
 echo 2. Copy Files to %LogGathererRoot%...
-mkdir "%LogGathererRoot%\Logs"
+mkdir "%LOCALAPPDATA%\LogGatherer\Logs"
+setx /M LogGathererRoot "%LOCALAPPDATA%\LogGatherer"
 set SOURCE=%~dp0%*
 copy "%SOURCE%" "%LogGathererRoot%"
 echo 3. Register FileAccessMonitor to taskschd...
