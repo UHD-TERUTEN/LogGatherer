@@ -7,7 +7,7 @@ echo start update
 echo zipping log files
 mkdir "%LogGathererRoot%\Logs\%DATE%"
 move %LogGathererRoot%\Logs\*.txt "%LogGathererRoot%\Logs\%DATE%"
-tar -zcvf "%LogGathererRoot%\Logs\%DATE%\%DATE%.tar.gz" -C %LogGathererRoot%\Logs\%Date% .
+tar -zcvf "%LogGathererRoot%\Logs\%DATE%\%DATE%.tar.gz" -C %LogGathererRoot%\Logs\%Date% *.txt
 echo.
 echo uploading zip file
 echo ssh connecting to %ssh_account%...
