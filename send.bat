@@ -11,8 +11,8 @@ tar -zcvf "%LogGathererRoot%\Logs\%DATE%\%DATE%.tar.gz" -C %LogGathererRoot%\Log
 echo.
 echo uploading zip file
 echo ssh connecting to %ssh_account%...
-ssh -i %id_rsa_location% %ssh_account% "mkdir logs"
-scp -i %id_rsa_location% "%LogGathererRoot%\Logs\%DATE%\%DATE%.tar.gz" "%ssh_account%:logs"
+ssh -i %id_rsa_location% %ssh_account% "mkdir Logs"
+scp -i %id_rsa_location% "%LogGathererRoot%\Logs\%DATE%\%DATE%.tar.gz" "%ssh_account%:Logs"
 rmdir /s /q "%LogGathererRoot%\Logs\%DATE%"
 echo.
 echo log files have been uploaded!
